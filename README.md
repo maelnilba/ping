@@ -2,7 +2,7 @@
 
     next-app/
     ├─ src/
-    │  ├─ new_folder/
+    │  ├─ api/
     │  │  ├─ pong.ts
     │  │  ├─ ping.ts
     │  ├─ index.js
