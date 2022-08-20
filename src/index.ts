@@ -7,7 +7,7 @@ server.get("/ping", (req, reply) => {
   // req.headers.authorization
   const params = jobSchema.parse(req.query);
   console.log("get ping");
-  if (params.ms_time < 0 || params.ms_time > 60 * 1000) {
+  if (params.ms_time < 0 || params.ms_time > 60 * 60 * 1000) {
     reply.status(404).send({});
     return;
   }
