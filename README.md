@@ -1,4 +1,4 @@
-**\*Dumbly basic** API for timeout actions when using serverless.\*
+# Dumbly basic API for timeout actions `when using serverless`.
 
     next-app/
     ├─ src/
@@ -48,5 +48,5 @@
     	    res.status(404).json({ error: "bad key" });
     	    return;
     	}
-    	const data = dataSchema.parse(JSON.parse(req.body));
+        const data = dataSchema.parse(JSON.parse(req.body));
     }
