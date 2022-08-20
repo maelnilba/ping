@@ -44,7 +44,10 @@ server.get("/", (_, reply) => {
 });
 
 server.listen(
-  { port: process.env.PORT ? parseInt(process.env.PORT) : 8080 },
+  {
+    port: process.env.PORT ? parseInt(process.env.PORT) : 8080,
+    host: process.env.HOST || "0.0.0.0",
+  },
   (err, address) => {
     if (err) {
       console.error(err);
