@@ -3,7 +3,6 @@ import fetch from "cross-fetch";
 import { jobSchema } from "./zod/jobSchema";
 
 const server = fastify();
-
 server.get("/ping", (req, reply) => {
   // req.headers.authorization
   const params = jobSchema.parse(req.query);
@@ -44,10 +43,13 @@ server.get("/", (_, reply) => {
   reply.send({ uptime: process.uptime() });
 });
 
-server.listen({ port: 8080 }, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
+server.listen(
+  { port: process.env.PORT ? parseInt(process.env.PORT) : 8080 },
+  (err, address) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    console.log(`Server listening at ${address}`);
   }
-  console.log(`Server listening at ${address}`);
-});
+);
