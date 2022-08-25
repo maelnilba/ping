@@ -7,9 +7,12 @@
     │  │  ├─ ping.ts
     │  ├─ index.js
 
-## in ping.ts
+## Example
 
-    fetch('https://ping4.herokuapp.com/ping?url=<pong_url>&ms_time=<timeout_in_ms>&key=<key>
+    fetch('https://ping4.herokuapp.com/ping?url=<pong_url>&ms_time=<timeout_in_ms>&key=<key>&id="test"', { method: "GET"});
+    fetch('https://ping4.herokuapp.com/ping?url=<pong_url>&key=<key>&id="test', { method: "DELETE"});
+
+## in ping.ts
 
     params: {
     	data?:  string  |  undefined;
